@@ -1,0 +1,26 @@
+# Android / Gradle build
+.gradle/
+build/
+*/build/
+
+# Android Studio
+.idea/
+*.iml
+
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+# NDK / C++
+*.o
+*.so
+*.log
