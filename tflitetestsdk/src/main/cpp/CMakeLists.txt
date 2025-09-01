@@ -4,7 +4,7 @@
 
 # Sets the minimum CMake version required for this project.
 cmake_minimum_required(VERSION 3.22.1)
-project("tflitetest")
+project("tflitetestsdk")
 
 # native-lib
 add_library(
@@ -18,8 +18,8 @@ find_library(log-lib log)
 find_library(android-lib android)
 
 # TensorFlow Lite C API (IMPORTED)
-add_library(tflite-lib SHARED IMPORTED)
-set_target_properties(tflite-lib PROPERTIES
+add_library(tflite_c SHARED IMPORTED)
+set_target_properties(tflite_c PROPERTIES
         IMPORTED_LOCATION ${CMAKE_SOURCE_DIR}/../jniLibs/${ANDROID_ABI}/libtensorflowlite_c.so
 )
 
@@ -34,7 +34,7 @@ target_link_libraries(
         tflitetestsdk
         ${log-lib}
         ${android-lib}
-        tflite-lib
+        tflite_c
 )
 
 

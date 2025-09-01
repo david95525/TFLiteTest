@@ -24,3 +24,4 @@ local.properties
 *.o
 *.so
 *.log
+app/src/main/libs/tflitetestsdk-release.aar

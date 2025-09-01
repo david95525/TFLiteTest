@@ -1,20 +1,21 @@
-// yolo_detector.h
 #pragma once
-#include <string>
 #include <vector>
-#include <array>
-#include "yolo_utils.h"
+#include <string>
 #include "tensorflow/lite/c/c_api.h"
+#include "yolo_utils.h"  // 提供 extract_bb / non_max_suppression
 
 class YoloDetector {
 public:
-    YoloDetector(const std::string& model_path);
+    // 使用已建好的 TfLiteInterpreter
+    explicit YoloDetector(TfLiteInterpreter* interpreter);
     ~YoloDetector();
 
-    // 將圖片資料傳入（已轉 float buffer）
+    // inputBuffer: 直接輸入 FloatBuffer
     std::vector<Detection> run(const float* inputBuffer);
 
 private:
     TfLiteInterpreter* interpreter_;
 };
+
+
 
