@@ -39,6 +39,7 @@ android {
 }
 dependencies {
     implementation(files("src/main/libs/tflitetestsdk-release.aar"))
+    implementation(files("src/main/libs/onnxlib-release.aar"))
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
